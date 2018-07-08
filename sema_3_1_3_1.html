@@ -3,9 +3,12 @@
 <html>
 
 <head>
-    <title>EKRAN_3_1_1_2</title>
+    <title>EKRAN_3_1_3_1</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -154,32 +157,47 @@
     background-color: #0070C0;
     height: 2px;">
 
-    <!-- Uclu butonlar (aramayap, listedensec, yaz) -->
+    <!-- Ikili butonlar (eleman, mekan, yaz) -->
     <div class="row" style="margin-bottom:30px;margin-top:20px">
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-2 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:blue;">Arama Yap</button>
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold ; color:white;background-color:blue;">Listeden Seç</button>
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:blue;">Yaz</button>
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-3 offset-3 btn uclu_butonlar butonlar" style="padding:2vh; font-weight:bold; color:white;background-color:blue;">Eleman</button>
+        <div class="col-md-1 col-sm-1 col-1 col-lg-1"></div>
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:blue;">Mekan</button>
     </div>
 
-    <!-- Secenek listesi -->
-    <div class="row" style="padding:0; margin:0; border:0" >
-        <!-- Birincil secenekler -->
-        <div class="cizik col-md-3 col-3">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Termal Konfor</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Alta inen buton</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Yazisi cok uzun oldugu icin tek satira sigmayan buton</button>
+    <!-- Eleman ve mekan resimleri -->
+    <div class="row">
+        <!-- Zemin resmi -->
+        <div class="col-md-4 col-4 img-responsive offset-md-1 offset-1" style="padding-left:0 !important;padding-right:0 !important">
+            <p style="text-align:center; color:#0672BF; font-weight:bold; font-size:x-large"> Zemin </p>
+            <img class="img-responsive col-md-12" style="border:medium solid #0672BF;  padding-left:0 !important;padding-right:0 !important" src="ekran_3_1_3_1_zemin.png">
         </div>
 
-        <!-- Ikincil secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Ortam Sıcaklığı</button>
+        <!-- Tavan resmi -->
+        <div class="col-md-4 col-4 img-responsive offset-md-1 offset-1" style="padding-left:0 !important;padding-right:0 !important">
+            <p style="text-align:center; color:#0672BF; font-weight:bold; font-size:x-large"> Tavan </p>
+            <img class="img-responsive col-md-12" style="border:medium solid #0672BF; padding-left:0 !important;padding-right:0 !important" src="ekran_3_1_3_1_tavan.png">
         </div>
+    </div>
 
-        <!-- Ucuncul secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Ortam Çok Soğuk</button>
+
+    <!-- Eleman listesi -->
+    <div class="row" style="margin-bottom:30px;margin-top:30px">
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-3 offset-3 btn uclu_butonlar butonlar" style="pointer-events: none; cursor:default; padding:2vh; font-weight:bold; color:white;background-color:#1F4E79;">Eleman:</button>
+        
+        <div class="col-md-1 col-sm-1 col-1 col-lg-1" style="padding:0; border:0; margin:0;"></div>
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                LISTE_OLCAKMIS
+            </button>
+            <div class="dropdown-menu" style="overflow:hidden;">
+                <a class="dropdown-item" href="#">biseyler</a>
+                <a class="dropdown-item" href="#">baska biseyler</a>
+                <a class="dropdown-item" href="#">daha baska biseyler</a>
+                <a class="dropdown-item" href="#">1</a>
+                <a class="dropdown-item" href="#">2</a>
+                <a class="dropdown-item" href="#">3</a>
+            </div>
         </div>
-
     </div>
 
     <!-- Iptal ve Ileri butonlarinin ustundeki cizgi -->
