@@ -1,0 +1,7 @@
+buton laciverti: 1F4E79
+Gri: A6A6A6
+besli buton mavisi: 2E75B6
+buton yesili: 00B050
+iptal ve ileri butonlarinin mavisi: 5B9BD5
+???: 0672BF
+Önizleme text: 0070C0
