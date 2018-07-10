@@ -149,9 +149,9 @@
 
     <!-- Uclu butonlar (aramayap, listedensec, yaz) -->
     <div class="row" style="margin-bottom:30px;margin-top:20px">
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-2 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:#1F4E79;">Arama Yap</button>
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold ; color:white;background-color:#A6A6A6;">Listeden Seç</button>
-        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:#A6A6A6;">Yaz</button>
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-2 offset-1 btn uclu_butonlar butonlar" id="searchButton" style="font-weight:bold; color:white;background-color:#1F4E79;">Arama Yap</button>
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" id="listSelectionButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">Listeden Seç</button>
+        <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" id="writeButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">Yaz</button>
     </div>
 
     <!-- Sikayet arama icin textarea -->
@@ -188,6 +188,10 @@
         str += "\n" + "Document width: " + String(documentWidth) + "\n" + "Document Height: " + String(documentHeight);
  
         $('#sikayet_text').val(str)
+
+        $("#listSelectionButton").on("click", function(){
+            window.location.href = "sema_3_1_1_2.html";
+        });
     })
     
     </script>

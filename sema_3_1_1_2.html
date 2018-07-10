@@ -4,9 +4,11 @@
 
 <head>
     <title>EKRAN_3_1_1_2</title>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="sikayet_navigations.js"></script>
+    <script src="sikayet_listesi_turkce.js"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,7 +87,7 @@
         .liste_butonu{
             font-weight:bold;
             color:white;
-            background-color:gray;
+            background-color:#A6A6A6;
             margin-top:1vh;
             white-space:normal;
         }
@@ -165,20 +167,18 @@
     <!-- Secenek listesi -->
     <div class="row" style="padding:0; margin:0; border:0" >
         <!-- Birincil secenekler -->
-        <div class="cizik col-md-3 col-3">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Termal Konfor</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Alta inen buton</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Yazisi cok uzun oldugu icin tek satira sigmayan buton</button>
+        <div class="cizik col-md-3 col-3" id="primaryChoices">
+    
         </div>
 
         <!-- Ikincil secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Ortam Sıcaklığı</button>
+        <div class="cizik col-md-3 col-3 offset-md-1 offset-1" id="secondaryChoices">
+            
         </div>
 
         <!-- Ucuncul secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Ortam Çok Soğuk</button>
+        <div class="cizik col-md-3 col-3 offset-md-1 offset-1" id="tertiaryChoices">
+
         </div>
 
     </div>
@@ -197,6 +197,127 @@
 
     <!--  Javascript -->
     <script>
+    var x = 0;
+
+    var primaryText = "";
+    var secondaryText = "";
+    var tertiaryText = "";
+
+    $(document).ready(function() {
+        for (key in sikayet_listesi)
+        {
+            //  create primary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu primaryButton">';
+            var suffix = '</button>';
+            if (key !== "undefined")
+            {
+                var element = prefix + key + suffix;
+                $("#primaryChoices").append(element);
+            }
+            console.log(key);
+
+            //  hide secondary buttons
+            $("#secondaryChoices").hide();
+
+            //  hide tertiary buttons
+            $("#tertiaryChoices").hide();
+        }
+
+    })
+
+    //  primary button click event
+    $("#primaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("primaryButton"))
+        {
+            //  turn all primary buttons to gray
+            $(".primaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            //  clear secondary choices
+            $("#secondaryChoices").empty();
+
+            //  show secondary choices
+            $("#secondaryChoices").show();
+
+            //  clear tertiary choices
+            $("#tertiaryChoices").empty();
+
+            //  hide tertiary choices
+            $("#tertiaryChoices").hide();
+
+            //  create secondary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu secondaryButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">';
+            var suffix = '</button>';
+            for (key in sikayet_listesi[target.text()])
+            {
+                var element = prefix + key + suffix;
+                $("#secondaryChoices").append(element);
+                console.log(key);
+            }
+
+            primaryText = target.text();
+            secondaryText = "";
+            tertiaryText = "";
+        }
+    })
+
+    //  secondary button click event
+    $("#secondaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("secondaryButton"))
+        {
+            //  turn all secondary buttons to gray
+            $(".secondaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            //  clear tertiary choices
+            $("#tertiaryChoices").empty();
+
+            //  show tertiary choices
+            $("#tertiaryChoices").show();
+
+            //  create tertiary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu tertiaryButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">';
+            var suffix = '</button>';
+
+            L0 = sikayet_listesi[primaryText];
+            L1 = L0[target.text()];
+            console.log(L0);
+            console.log(L1);
+
+            for (index = 0; index < L1.length; ++index)
+            {
+                key = L1[index];
+                var element = prefix + key + suffix;
+                $("#tertiaryChoices").append(element);
+                console.log(key);
+            }
+
+            secondaryText = target.text();
+            tertiaryText = "";
+        }
+    })
+
+    //  tertiary button click event
+    $("#tertiaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("tertiaryButton"))
+        {
+            //  turn all tertiary buttons to gray
+            $(".tertiaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            tertiaryText = target.text();
+        }
+    })
+
     
     </script>
 

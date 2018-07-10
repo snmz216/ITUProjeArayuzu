@@ -1,6 +1,12 @@
-//  empty object
-sikayet_listesi = {};
+var global1 = "I'm a global!";
 
+//  empty object
+var sikayet_listesi = {};
+
+function hehehe()
+{
+    console.log("hehe")
+}
 
 sikayet_listesi["Termal Konfor"] = {
     "Ortam Sıcaklığı": [
@@ -27,7 +33,7 @@ sikayet_listesi["Termal Konfor"] = {
         "Yavaş sıcaklık değişimi",
     ],
 
-    "Hava Akışı:" [
+    "Hava Akışı": [
         "Havalandırmadan gelen hava akışı",
         "Pencere veya kapıdan gelen hava akışı",
     ],
@@ -78,11 +84,11 @@ sikayet_listesi["İşitsel/Akustik Konfor"] = {
 };
 
 sikayet_listesi["Görsel Konfor"] = {
-    "Gün Işığı:" [
+    "Gün Işığı": [
         "Yetersiz güneş ışığı",
     ],
 
-    "Yapay Aydınlatma:" [
+    "Yapay Aydınlatma": [
         "Çalışma ortamındaki aydınlatma kalitesi",
         "Masamdaki ışık miktarı",
         "Aydınlatmanın yarattığı gölgeler",
@@ -94,7 +100,7 @@ sikayet_listesi["Görsel Konfor"] = {
         "Pencereden gelen güneş ışığından kaynaklanan parlama",
     ],
 
-    "Yansıma:": [
+    "Yansıma": [
         "Ekranlı cihazlardaki yansımalar",
     ],
 
@@ -194,7 +200,7 @@ sikayet_listesi["Bina Hizmetleri"] = {
         "Bina yönetim firması hizmetlerinin duyurulmaması",
     ],
 
-    "Bakın&Onarım": [
+    "Bakım&Onarım": [
         "Bakım ve onarım periyodu",
         "Armatür ve ekipmanların yenilenmesi",
         "Dayanıklı ve tamir edilebilir malzemelerin kullanılmaması",
