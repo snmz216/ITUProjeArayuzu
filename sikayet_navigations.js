@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     //  kaynak button
     $("#navigationButton2").on("click", function() {
-        window.location.href = "sema_3_1_3_1.html"
+        window.location.href = "sema_3_1_3_x.html"
     });
 
     //  zaman button
