@@ -220,24 +220,34 @@
     
     //  ekran 3_1_1_x js
     $(document).ready(function() {
-        //$("#div_screen_2").hide();
-        //$("#div_screen_3").hide();
         $("#searchButton").on("click", function() {
             $("#div_screen_1").show();
             $("#div_screen_2").hide();
             $("#div_screen_3").hide();
+
+            $("#searchButton").css("background-color", "#1F4E79");
+            $("#listSelectionButton").css("background-color", "#A6A6A6");
+            $("#writeButton").css("background-color", "#A6A6A6");
         });
 
         $("#listSelectionButton").on("click", function() {
             $("#div_screen_1").hide();
             $("#div_screen_2").show();
             $("#div_screen_3").hide();
+
+            $("#searchButton").css("background-color", "#A6A6A6");
+            $("#listSelectionButton").css("background-color", "#1F4E79");
+            $("#writeButton").css("background-color", "#A6A6A6");
         });
 
         $("#writeButton").on("click", function() {
             $("#div_screen_1").hide();
             $("#div_screen_2").hide();
             $("#div_screen_3").show();
+
+            $("#searchButton").css("background-color", "#A6A6A6");
+            $("#listSelectionButton").css("background-color", "#A6A6A6");
+            $("#writeButton").css("background-color", "#1F4E79");
         });
     })
 

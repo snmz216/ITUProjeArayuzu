@@ -157,37 +157,51 @@
 
     <!-- Ikili butonlar (otomatikkonum, listedensec, yaz) -->
     <div class="row" style="margin-bottom:30px;margin-top:20px">
-        <button class="col-md-3 col-sm-4 col-4 col-lg-3 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:#A6A6A6;">Otomatik Konum</button>
+        <button class="col-md-3 col-sm-4 col-4 col-lg-3 offset-md-1 offset-1 btn uclu_butonlar butonlar" id="autoLocationButton" style="font-weight:bold; color:white;background-color:#1F4E79;">Otomatik Konum</button>
         <div class="col-md-1 col-sm-2 col-2 col-lg-1 offset-md-2"></div>
-        <button class="col-md-3 col-sm-4 col-4 col-lg-3 offset-md-1 offset-1 btn uclu_butonlar butonlar" style="font-weight:bold; color:white;background-color:#1F4E79;">Listeden Seçim</button>
+        <button class="col-md-3 col-sm-4 col-4 col-lg-3 offset-md-1 offset-1 btn uclu_butonlar butonlar" id="manualLocationButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">Listeden Seçim</button>
     </div>
 
-    <!-- Secenek listesi -->
-    <div class="row" style="padding:0; margin:0; border:0" >
-        <!-- Birincil secenekler -->
-        <div class="cizik col-md-3 col-3">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Arı-3</button>
-        </div>
-
-        <!-- Ikincil secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 1</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 2</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 3</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 4</button>
-        </div>
-
-        <!-- Ucuncul secenekler -->
-        <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">311</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">312</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">313</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">314</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">315</button>
-            <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">316</button>
+    <!-- ekran 3_1_2_1 divi -->
+    <div id="div_screen_1">
+        <!-- Resim -->
+        <div class="col-md-10 cizik col-10 offset-md-1 offset-1 img-responsive " style="padding:0">
+            <img class="img-responsive col-md-12" src="ekran_3_1_2_1_resim.png" style="padding:0">
         </div>
 
     </div>
+
+    <!-- ekran 3_1_2_2 divi -->
+    <div id="div_screen_2">
+        <!-- Secenek listesi -->
+        <div class="row" style="padding:0; margin:0; border:0" >
+            <!-- Birincil secenekler -->
+            <div class="cizik col-md-3 col-3">
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu">Arı-3</button>
+            </div>
+    
+            <!-- Ikincil secenekler -->
+            <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 1</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 2</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 3</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">Kat 4</button>
+            </div>
+    
+            <!-- Ucuncul secenekler -->
+            <div class="cizik col-md-3 col-3 offset-md-1 offset-1">
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">311</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">312</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">313</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">314</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">315</button>
+                <button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu" style="font-weight:bold; color:white;background-color:gray;">316</button>
+            </div>
+    
+        </div>
+    </div>
+
+    
 
     <!-- Iptal ve Ileri butonlarinin ustundeki cizgi -->
     <hr class="col-md-11" style="color:#0070C0;
@@ -203,10 +217,29 @@
 
     <!--  Javascript -->
     <script>
+
+    //  ekran 3_1_2_x js
+    $(document).ready(function() {
+        $("#autoLocationButton").on("click", function() {
+            $("#div_screen_1").show();
+            $("#div_screen_2").hide();
+
+            $("#autoLocationButton").css("background-color", "#1F4E79")
+            $("#manualLocationButton").css("background-color", "#A6A6A6")
+        });
+
+        $("#manualLocationButton").on("click", function() {
+            $("#div_screen_1").hide();
+            $("#div_screen_2").show();
+
+            $("#autoLocationButton").css("background-color", "#A6A6A6")
+            $("#manualLocationButton").css("background-color", "#1F4E79")
+        });
+
+    })
     
     </script>
 
 </body>
-
 
 </html>

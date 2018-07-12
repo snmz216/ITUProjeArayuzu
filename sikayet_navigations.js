@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     //  konum button
     $("#navigationButton1").on("click", function() {
-        window.location.href = "sema_3_1_2_1.html"
+        window.location.href = "sema_3_1_2_x.html"
     });
 
     //  kaynak button
