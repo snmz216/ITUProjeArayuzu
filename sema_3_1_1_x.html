@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="sikayet_navigations.js"></script>
+    <script src="sikayet_listesi_turkce.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -83,7 +84,13 @@
         }
 
 
-
+        .liste_butonu{
+            font-weight:bold;
+            color:white;
+            background-color:#A6A6A6;
+            margin-top:1vh;
+            white-space:normal;
+        }
 
 
         body {
@@ -154,14 +161,46 @@
         <button class="col-md-2 col-sm-3 col-3 col-lg-2 offset-md-1 offset-1 btn uclu_butonlar butonlar" id="writeButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">Yaz</button>
     </div>
 
-    <!-- Sikayet arama icin textarea -->
-    <div class="col-md-9 col-11 offset-md-1">
-        <textarea style="border-radius:5px; width:100%" rows="2"></textarea>
+    <!-- ekran 3_1_1_1 divi -->
+    <div id="div_screen_1">
+        <!-- Sikayet arama icin textarea -->
+        <div class="col-md-9 col-11 offset-md-1">
+            <textarea style="border-radius:5px; width:100%" rows="2"></textarea>
+        </div>
+    
+        <!-- Sikayet arama sonucu icin textarea -->
+        <div class="col-md-9 col-11 offset-md-1" style="margin-top:5px;">
+            <textarea id="sikayet_text" style="border-radius:5px; width:100%" rows="10"></textarea>
+        </div>
+    </div>
+    
+    <!-- ekran 3_1_1_2 divi -->
+    <div id="div_screen_2" style="display:none;">
+        <!-- Secenek listesi -->
+        <div class="row" style="padding:0; margin:0; border:0" >
+            <!-- Birincil secenekler -->
+            <div class="cizik col-md-3 col-3" id="primaryChoices">
+        
+            </div>
+    
+            <!-- Ikincil secenekler -->
+            <div class="cizik col-md-3 col-3 offset-md-1 offset-1" id="secondaryChoices">
+                
+            </div>
+    
+            <!-- Ucuncul secenekler -->
+            <div class="cizik col-md-3 col-3 offset-md-1 offset-1" id="tertiaryChoices">
+
+            </div>
+        </div>
     </div>
 
-    <!-- Sikayet arama sonucu icin textarea -->
-    <div class="col-md-9 col-11 offset-md-1" style="margin-top:5px;">
-        <textarea id="sikayet_text" style="border-radius:5px; width:100%" rows="10"></textarea>
+    <!-- ekran 3_1_1_3 divi -->
+    <div id="div_screen_3" style="display:none;">
+        <!-- Sikayet yazmak icin textarea -->
+        <div class="col-md-9 col-11 offset-md-1" style="margin-top:5px;">
+            <textarea id="sikayet_text" placeholder="Şikayetinizi Giriniz.." style="border-radius:5px; width:100%;" rows="15"></textarea>
+        </div>        
     </div>
 
     <!-- Textarealarin altindaki cizgi -->
@@ -178,6 +217,32 @@
 
     <!--  Javascript -->
     <script>
+    
+    //  ekran 3_1_1_x js
+    $(document).ready(function() {
+        //$("#div_screen_2").hide();
+        //$("#div_screen_3").hide();
+        $("#searchButton").on("click", function() {
+            $("#div_screen_1").show();
+            $("#div_screen_2").hide();
+            $("#div_screen_3").hide();
+        });
+
+        $("#listSelectionButton").on("click", function() {
+            $("#div_screen_1").hide();
+            $("#div_screen_2").show();
+            $("#div_screen_3").hide();
+        });
+
+        $("#writeButton").on("click", function() {
+            $("#div_screen_1").hide();
+            $("#div_screen_2").hide();
+            $("#div_screen_3").show();
+        });
+    })
+
+
+    //  ekran 3_1_1_1 js
     $(document).ready(function() {
         var windowWidth = $(window).width();
         var windowHeight = $(window).height();
@@ -187,16 +252,134 @@
         var str = "Window Width: " + String(windowWidth) + "\n" + "Window Height: " + String(windowHeight);
         str += "\n" + "Document width: " + String(documentWidth) + "\n" + "Document Height: " + String(documentHeight);
  
-        $('#sikayet_text').val(str)
-
-        $("#listSelectionButton").on("click", function(){
-            window.location.href = "sema_3_1_1_2.html";
-        });
+        $('#sikayet_text').val(str);
     })
-    
+
+
+    //  ekran 3_1_1_2 js
+    var x = 0;
+
+    var primaryText = "";
+    var secondaryText = "";
+    var tertiaryText = "";
+
+    $(document).ready(function() {
+        for (key in sikayet_listesi)
+        {
+            //  create primary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu primaryButton">';
+            var suffix = '</button>';
+            if (key !== "undefined")
+            {
+                var element = prefix + key + suffix;
+                $("#primaryChoices").append(element);
+            }
+            console.log(key);
+
+            //  hide secondary buttons
+            $("#secondaryChoices").hide();
+
+            //  hide tertiary buttons
+            $("#tertiaryChoices").hide();
+        }
+    })
+
+    //  primary button click event
+    $("#primaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("primaryButton"))
+        {
+            //  turn all primary buttons to gray
+            $(".primaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            //  clear secondary choices
+            $("#secondaryChoices").empty();
+
+            //  show secondary choices
+            $("#secondaryChoices").show();
+
+            //  clear tertiary choices
+            $("#tertiaryChoices").empty();
+
+            //  hide tertiary choices
+            $("#tertiaryChoices").hide();
+
+            //  create secondary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu secondaryButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">';
+            var suffix = '</button>';
+            for (key in sikayet_listesi[target.text()])
+            {
+                var element = prefix + key + suffix;
+                $("#secondaryChoices").append(element);
+                console.log(key);
+            }
+
+            primaryText = target.text();
+            secondaryText = "";
+            tertiaryText = "";
+        }
+    })
+
+    //  secondary button click event
+    $("#secondaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("secondaryButton"))
+        {
+            //  turn all secondary buttons to gray
+            $(".secondaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            //  clear tertiary choices
+            $("#tertiaryChoices").empty();
+
+            //  show tertiary choices
+            $("#tertiaryChoices").show();
+
+            //  create tertiary buttons
+            var prefix = '<button class="col-md-12 col-sm-12 col-12 col-lg-12 btn liste_butonu tertiaryButton" style="font-weight:bold; color:white;background-color:#A6A6A6;">';
+            var suffix = '</button>';
+
+            L0 = sikayet_listesi[primaryText];
+            L1 = L0[target.text()];
+            console.log(L0);
+            console.log(L1);
+
+            for (index = 0; index < L1.length; ++index)
+            {
+                key = L1[index];
+                var element = prefix + key + suffix;
+                $("#tertiaryChoices").append(element);
+                console.log(key);
+            }
+
+            secondaryText = target.text();
+            tertiaryText = "";
+        }
+    })
+
+    //  tertiary button click event
+    $("#tertiaryChoices").on("click", function(event) {
+        var target = $(event.target);
+        if (target.hasClass("tertiaryButton"))
+        {
+            //  turn all tertiary buttons to gray
+            $(".tertiaryButton").css("background-color", "#A6A6A6");
+
+            //  highlight selected button
+            target.css("background-color", "#00B050");
+
+            tertiaryText = target.text();
+        }
+    })
+
+
     </script>
 
 </body>
-
 
 </html>

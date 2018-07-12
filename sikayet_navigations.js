@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //  sikayet button
     $("#navigationButton0").on("click", function() {
-        window.location.href = "sema_3_1_1_1.html"
+        window.location.href = "sema_3_1_1_x.html"
     });
 
     //  konum button
