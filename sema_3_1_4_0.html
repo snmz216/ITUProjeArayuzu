@@ -8,15 +8,11 @@
         crossorigin="anonymous"></script>
     <script src="sikayet_navigations.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <!-- <script src="bootstrap.js"></script> -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="sema_3_style.css">
-    <link rel="stylesheet" href="bootstrap-datepicker-standalone.css">
+
     <style>
         /*Telefon*/
         @media screen and (max-width: 600px) {
@@ -162,16 +158,23 @@
 
     <!-- Guncel tarih ve zamani kullan butonu -->
     <div class="row" style="margin-bottom:30px;margin-top:20px">
-        <button class="col-md-4 col-sm-4 col-4 col-lg-3 offset-md-4 offset-4 btn uclu_butonlar butonlar" style="padding:2vh; font-weight:bold; color:white;background-color:blue;">Güncel Tarih ve Zamanı Kullan</button>
+        <button class="col-md-4 col-sm-4 col-4 col-lg-3 offset-md-4 offset-4 btn uclu_butonlar butonlar" style="padding:2vh; font-weight:bold; color:white;background-color:#1F4E79;">Güncel Tarih ve Zamanı Kullan</button>
     </div>
 
-    <main class="container">
-        <div class="row" style="padding-top: 100px">
-            <div class="col">
-                <input data-date-format="dd/mm/yyyy" id="datepicker">
-            </div>
-        </div>
-    </main>
+   <!-- Tarih -->
+   <div class="row">
+        <!-- (tiklanilmayan) Tarih butonu -->
+        <button class="cizik col-md-1 col-sm-1 col-1 col-lg-1 offset-md-4 offset-4 btn" style="font-weight:bold; color:white; background-color:#1F4E79;">Tarih</button>
+
+        <!-- input gun -->
+        <input class="cizik col-md-1 col-sm-1 col-1 col-lg-1" name="Tarih">
+
+        <!-- diagonal line between day and month -->
+        <svg class="cizik col-md-1 col-sm-1 col-1 col-lg-1" style="padding:0; margin:0; width:100%; height:100%;">
+            <line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:#0672BF; stroke-width:1"></line>
+        </svg>
+
+   </div>
     
 
     <!-- Iptal ve Ileri butonlarinin ustundeki cizgi -->
