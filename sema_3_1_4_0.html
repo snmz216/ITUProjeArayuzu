@@ -158,23 +158,49 @@
 
     <!-- Guncel tarih ve zamani kullan butonu -->
     <div class="row" style="margin-bottom:30px;margin-top:20px">
-        <button class="col-md-4 col-sm-4 col-4 col-lg-3 offset-md-4 offset-4 btn uclu_butonlar butonlar" style="padding:2vh; font-weight:bold; color:white;background-color:#1F4E79;">Güncel Tarih ve Zamanı Kullan</button>
+        <button class="col-md-4 col-sm-4 col-4 col-lg-3 offset-md-4 offset-4 btn uclu_butonlar butonlar" id="currentDateButton" style="padding:2vh; font-weight:bold; color:white;background-color:#1F4E79;">Güncel Tarih ve Zamanı Kullan</button>
     </div>
 
-   <!-- Tarih -->
+   <!-- Date -->
    <div class="row">
         <!-- (tiklanilmayan) Tarih butonu -->
-        <button class="cizik col-md-1 col-sm-1 col-1 col-lg-1 offset-md-4 offset-4 btn" style="font-weight:bold; color:white; background-color:#1F4E79;">Tarih</button>
+        <button class=" col-md-1 col-sm-1 col-1 col-lg-1 offset-md-4 offset-4 btn" style="margin-right:10px; font-weight:bold; color:white; background-color:#1F4E79;">Tarih</button>
 
-        <!-- input gun -->
-        <input class="cizik col-md-1 col-sm-1 col-1 col-lg-1" name="Tarih">
+        <!-- input day -->
+        <input class=" col-md-1 col-sm-1 col-1 col-lg-1" style="margin-right:10px;" id="inputDay" name="inputDay">
 
         <!-- diagonal line between day and month -->
-        <svg class="cizik col-md-1 col-sm-1 col-1 col-lg-1" style="padding:0; margin:0; width:100%; height:100%;">
-            <line x1="0%" y1="100%" x2="100%" y2="0%" style="stroke:#0672BF; stroke-width:1"></line>
-        </svg>
+        <h2 style="color:#0672BF; margin-right:10px;">/</h2>
 
+        <!-- input month -->
+        <input class="col-md-1 col-sm-1 col-1 col-lg-1" style="margin-right:10px;" id="inputMonth" name="inputMonth">
+
+        <!-- diagonal line between month and year -->
+        <h2 style="color:#0672BF; margin-right:10px;">/</h2>
+
+        <!-- input year -->
+        <input class="col-md-1 col-sm-1 col-1 col-lg-1" id="inputYear" name="inputYear">
    </div>
+
+   <!-- Hour -->
+   <div class="row" style="margin-top:2vh">
+        <!-- (tiklanilmayan) saat butonu -->
+        <button class=" col-md-1 col-sm-1 col-1 col-lg-1 offset-md-4 offset-4 btn" style="margin-right:10px; font-weight:bold; color:white; background-color:#1F4E79;">Saat</button>
+
+        <!-- input hour -->
+        <input class=" col-md-1 col-sm-1 col-1 col-lg-1" style="margin-right:10px;" id="inputHour" name="inputHour">
+
+        <!-- diagonal line between day and month -->
+        <h2 style="color:#0672BF; margin-right:10px;">:</h2>
+
+        <!-- input minute -->
+        <input class="col-md-1 col-sm-1 col-1 col-lg-1" style="margin-right:10px;" id="inputMinute" name="inputMinute">
+    </div>
+
+    <!-- empty div for spacing between -->
+    <div style="padding-bottom:10vh">
+
+    </div>
     
 
     <!-- Iptal ve Ileri butonlarinin ustundeki cizgi -->
@@ -194,7 +220,22 @@
     
 
     $(document).ready(function() {
-        $('.datepicker').datepicker();
+        $("#currentDateButton").on("click", function() {
+            //  create date object
+            var date = new Date;
+            
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;  //  +1 because january is 0
+            var day = date.getDate();
+            $("#inputDay").val(day);
+            $("#inputMonth").val(month);
+            $("#inputYear").val(year);
+        
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            $("#inputHour").val(hour);
+            $("#inputMinute").val(minutes);
+        });
     })
     
     
