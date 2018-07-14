@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ADMIN_1</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="sikayet_navigations.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap.css">
+
+    <style>
+        .btn {
+            display: block !important;
+        }
+
+        .admin_buttons {
+            margin-left: 1%;
+            font-weight: bold;
+            color: white;
+            background-color: #00B050;
+            margin-top: 10px;
+        }
+
+        .admin_buttons_container {
+            border-right: 3px solid #A6A6A6;
+        }
+
+        .login_inputs {
+            padding: 0.75rem 1.25rem;
+
+
+            position: relative;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="row" style="margin:0;padding:0">
+        <div class="admin_buttons_container col-md-2">
+            <div class="btn col-md-11 admin_buttons">
+                ANASAYFA </div>
+            <div class="btn col-md-11 admin_buttons">
+                ŞİKAYETLER </div>
+            <div class="btn col-md-11 admin_buttons">
+                İSTATİSTİKLER </div>
+
+            <div class="btn col-md-11 admin_buttons" style="margin-top:180%">
+                ÇIKIŞ YAP </div>
+        </div>
+
+        <div class="col-md-6 offset-md-2" style="margin-top:50px;border:3px dashed">
+
+            <div class="row col-md-12" style="margin:0;padding:0;margin-top:50px">
+                <div class="col-md-3 alert alert-secondary" style="text-align: right;">
+                    KULLANICI ADI:
+                </div>
+
+                <div class="col-md-7 " style="">
+                    <input class="form-control login_inputs" type="text">
+                </div>
+            </div>
+
+
+            <div class="row col-md-12" style="margin:0;padding:0;">
+                <div class="col-md-3 alert alert-secondary" style="text-align: right;">
+                    ŞİFRE:
+                </div>
+
+                <div class="col-md-7 " style="">
+                    <input class="form-control login_inputs" type="text">
+                </div>
+            </div>
+
+
+
+           
+            <div onclick="" class="col-md-11 alert alert-success" style="text-align: center; cursor: pointer;" id="boran">
+                GİRİŞ YAP
+            </div>
+           
+
+        </div>
+    </div>
+</body>
+
+<script>
+      $(document).ready(function() {
+        $("#boran").on("click", function(event) {
+            console.log("div tiklandi");
+        });
+    })
+    </script>
+
+</html>
