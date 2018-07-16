@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="sema_3_style.css">
+    <link rel="stylesheet" href="besli_butonlar_style.css">
     <style>
         /*Telefon*/
         @media screen and (max-width: 600px) {
@@ -25,53 +26,12 @@
                 margin-left: 20px !important;
             }
 
-            .besli_butonlar {
-                
-                font-size: 13px;
-            }
             .besli_butonlar:first-child {
                 margin-left: 9px !important
             }
 
         }
 
-        /*
-        @media screen and (min-width: 800px)
-        {
-            .besli_butonlar::before{
-                content: " ";
-                position: absolute;
-                top: 0;
-                right: 0px;
-                width: 0px;
-                height: 0px;
-                right:auto;
-                left:0;
-
-                
-                border-top: 17px solid blue;
-                border-bottom: 17px solid blue;
-                border-left: 17px solid #BDD7EE;
-                border-right: 17px solid blue;
-                z-index:5
-            }
-
-            .besli_butonlar::after{
-                content: " ";
-                position: absolute;
-                top: 0;
-                right: 0px;
-                width: 0px;
-                height: 0px;
-
-                border-top: 17px solid #BDD7EE;
-                border-bottom: 19px solid #BDD7EE;
-                border-right: 17px solid #BDD7EE;
-                border-left: 17px solid blue;
-                z-index:3
-            }
-            
-    }*/
     .uclu_butonlar {
                 -webkit-box-shadow: 5px 4px 8px 2px rgba(0, 0, 0, 0.63);
                 box-shadow: 5px 4px 8px 2px rgba(0, 0, 0, 0.63);
@@ -92,10 +52,6 @@
             margin-top:1vh;
             white-space:normal;
         }
-
-
-
-
 
         body {
             background-color: #BDD7EE;
@@ -131,18 +87,17 @@
     </div>
 
     
-    <!-- <div class="row" style="margin-bottom:20px;margin-top:30px">
-        <button class="col-md-2 col-sm-2 col-2 col-lg-2 col-sm-2 col-2 col-lg-2 offset-md-1 offset-1 btn besli_butonlar butonlar" style="font-weight:bold; color:white;background-color:blue;">Şikayet</button>
-        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" style=" font-weight:bold; color:white;background-color:blue;"><span style="position:relative; z-index:500">Konum</span></button>
-        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" style=" font-weight:bold; color:white;background-color:blue;"><span style="position:relative; z-index:500">Kaynak</span></button>
-        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" style=" font-weight:bold; color:white;background-color:blue;"><span style="position:relative; z-index:500">Zaman</span></button>
-        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" style=" font-weight:bold; color:white;background-color:blue;"><span style="position:relative; z-index:500">Ek Bilgi</span></button>
+    <div class="row" style="margin-bottom:20px;margin-top:30px">
+        <button class="col-md-2 col-sm-2 col-2 col-lg-2 col-sm-2 col-2 col-lg-2 offset-md-1 offset-1 btn besli_butonlar_current butonlar" id="navigationButton0" style="">Şikayet</button>
+        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" id="navigationButton1" style=" "><span style="position:relative; z-index:500">Konum</span></button>
+        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" id="navigationButton2" style=" "><span style="position:relative; z-index:500">Kaynak</span></button>
+        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" id="navigationButton3" style=" "><span style="position:relative; z-index:500">Zaman</span></button>
+        <button class="col-md-2 col-sm-2 col-2 col-lg-2 btn besli_butonlar butonlar" id="navigationButton4" style=" "><span style="position:relative; z-index:500">Ek Bilgi</span></button>
     </div>
- -->
 
 
     <!-- Besli butonlar duz arrowsuz -->
-    <div class="row" style="margin-bottom:20px;margin-top:30px">
+    <!-- <div class="row" style="margin-bottom:20px;margin-top:30px">
         <div class="col-md-12 col-12" style="padding-right:0;padding-left:0">
             <button class="btn besli_butonlar butonlar besli_butonlar_ilk" id="navigationButton0" style="margin-left:4%; font-weight:bold; color:white; background-color:#00B050; width:18%"> Şikayet </button>
             <button class="btn besli_butonlar butonlar" id="navigationButton1" style="font-weight:bold; color:white; background-color:#00B050; width:18%"> Konum </button>
@@ -150,7 +105,7 @@
             <button class="btn besli_butonlar butonlar" id="navigationButton3" style="font-weight:bold; color:white; background-color:#A6A6A6; width:18%"> Zaman </button>
             <button class="btn besli_butonlar butonlar" id="navigationButton4" style="font-weight:bold; color:white; background-color:#A6A6A6; width:18%"> Ek Bilgi </button>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Besli butonlarin altindaki cizgi -->

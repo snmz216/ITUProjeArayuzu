@@ -1,0 +1,141 @@
+
+/*  font size for small devices */
+@media screen and (max-width: 600px) 
+{
+    .besli_butonlar 
+    {
+        font-size: 13px;
+    }
+}
+
+
+/*  arrow style for devices larger than mobile phones */
+@media screen and (min-width: 800px)
+{
+    .besli_butonlar_done::before
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+        right:auto;
+        left:0;
+
+        border-top: 17px solid #00B050;
+        border-bottom: 17px solid #00B050;
+        border-left: 17px solid #BDD7EE;
+        border-right: 17px solid #00B050;
+        z-index:5
+    }
+
+    .besli_butonlar_done::after
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+
+        border-top: 17px solid #BDD7EE;
+        border-bottom: 19px solid #BDD7EE;
+        border-right: 17px solid #BDD7EE;
+        border-left: 17px solid #00B050;
+        z-index:3
+    }     
+
+
+    .besli_butonlar_current::before
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+        right:auto;
+        left:0;
+
+        border-top: 17px solid #2E75B6;
+        border-bottom: 17px solid #2E75B6;
+        border-left: 17px solid #BDD7EE;
+        border-right: 17px solid #2E75B6;
+        z-index:5
+    }
+
+    .besli_butonlar_current::after
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+
+        border-top: 17px solid #BDD7EE;
+        border-bottom: 19px solid #BDD7EE;
+        border-right: 17px solid #BDD7EE;
+        border-left: 17px solid #2E75B6;
+        z-index:3
+    }      
+
+
+    .besli_butonlar::before
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+        right:auto;
+        left:0;
+
+        border-top: 17px solid #A6A6A6;
+        border-bottom: 17px solid #A6A6A6;
+        border-left: 17px solid #BDD7EE;
+        border-right: 17px solid #A6A6A6;
+        z-index:5
+    }
+
+    .besli_butonlar::after
+    {
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 0px;
+        height: 0px;
+
+        border-top: 17px solid #BDD7EE;
+        border-bottom: 19px solid #BDD7EE;
+        border-right: 17px solid #BDD7EE;
+        border-left: 17px solid #A6A6A6;
+        z-index:3
+    }      
+}
+
+
+/*  general screen-size independent style for navigation buttons */
+.besli_butonlar_done
+{
+    font-weight:bold; 
+    color:white;
+    background-color:#00B050;
+}
+
+.besli_butonlar_current
+{
+    font-weight:bold; 
+    color:white;
+    background-color:#2E75B6;
+}
+
+.besli_butonlar 
+{
+    font-weight:bold; 
+    color:white;
+    background-color:#A6A6A6;
+}
