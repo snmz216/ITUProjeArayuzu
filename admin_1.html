@@ -11,18 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="admin_panel_style.css">
 
     <style>
         .btn {
             display: block !important;
-        }
-
-        .admin_buttons {
-            margin-left: 1%;
-            font-weight: bold;
-            color: white;
-            background-color: #00B050;
-            margin-top: 10px;
         }
 
         .admin_buttons_container {
@@ -36,6 +29,10 @@
             position: relative;
             margin-bottom: 1rem;
         }
+
+        .cizik {
+            border: 1px dashed black;
+        }
     </style>
 
 
@@ -43,20 +40,21 @@
 
 <body>
     <div class="row" style="margin:0;padding:0">
+        <!-- sol paneldeki admin butonlari -->
         <div class="admin_buttons_container col-md-2">
-            <div class="btn col-md-11 admin_buttons">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
                 ANASAYFA </div>
-            <div class="btn col-md-11 admin_buttons">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
                 ŞİKAYETLER </div>
-            <div class="btn col-md-11 admin_buttons">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
                 İSTATİSTİKLER </div>
 
-            <div class="btn col-md-11 admin_buttons" style="margin-top:180%">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated" style="margin-top:180%">
                 ÇIKIŞ YAP </div>
         </div>
 
-        <div class="col-md-6 offset-md-2" style="margin-top:50px;border:3px dashed">
-
+        <!-- sag taraftaki login kismi -->
+        <div class="cizik col-md-6 offset-md-2" style="margin-top:50px;">
             <div class="row col-md-12" style="margin:0;padding:0;margin-top:50px">
                 <div class="col-md-3 alert alert-secondary" style="text-align: right;">
                     KULLANICI ADI:
@@ -94,6 +92,7 @@
       $(document).ready(function() {
         $("#boran").on("click", function(event) {
             console.log("div tiklandi");
+            window.location.href = "admin_2.html";
         });
     })
     </script>
