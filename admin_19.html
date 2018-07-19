@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>ADMIN_2(ANASAYFA)</title>
+    <title>ADMIN_19(ISTATISTIKLER)</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
@@ -12,6 +12,9 @@
 
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="admin_panel_style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
     <style>
         .btn {
@@ -49,42 +52,39 @@
     <div class="row" style="margin:0;padding:0">
         <!-- sol paneldeki admin butonlari -->
         <div class="admin_buttons_container col-md-2">
-            <div class="btn col-md-11 admin_buttons admin_button_current">
+            <div class="btn col-md-11 admin_buttons admin_button_available">
                 ANASAYFA </div>
             <div class="btn col-md-11 admin_buttons admin_button_available">
                 ŞİKAYETLER </div>
-            <div class="btn col-md-11 admin_buttons admin_button_available">
+            <div class="btn col-md-11 admin_buttons admin_button_current">
                 İSTATİSTİKLER </div>
 
             <div class="btn col-md-11 admin_buttons admin_button_logout" style="margin-top:180%">
                 ÇIKIŞ YAP </div>
         </div>
 
+       
+
         <!-- sag taraftaki -->
         <div class="cizik col-md-9" style="margin-top:20px;">
-            <!-- son girilen sikayetler -->
-            <div class="col-md-12" style="margin-right:40px !important; background-color:#F2F2F2; border:5px solid #A2A2A2;margin-top:10px; border-top-left-radius:50px; border-bottom-right-radius:50px;">
-                <br>
-                <h3 style="text-decoration:underline; text-align:center;">Son Girilen Şikayetler</h3>
-                <p> 
-                    <a href="F0234.html">F0234</a>: Ortam çok sıcak - Behlül Kula <br>
-                    <a href="F0233.html">F0233</a>: Ortam çok sıcak – Gürşans Güven <br>
-                    <a href="F0232.html">F0232</a>: Lambalardan ses geliyor – Behlül Kula <br>
-                    <a href="F0231.html">F0231</a>: Güneş ışığı ekranıma yansıma yapıyor – Esin Ergen <br>
-                    <a href="F0230.html">F0230</a>: Ortam çok soğuk – Neziha Yılmaz <br>
-                    <a href="F0229.html">F0229</a>: Sandalyem konforlu değil – Deniz Artan <br>
-                    <a href="F0228.html">F0228</a>: Ortam çok sıcak – Gürşans Güven <br>
-                </p>
-                <p> <a href="tum_sikayetler.html">Tüm şikayetleri göster..</a></p>
-            </div>
 
+            
             <div class="row col-md-12" style="margin-top:20px">
+                <!-- gunlere gore sikayetler -->
                 <div class="col-md-5" style="background-color:#F2F2F2; border: 5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px;">
                     <br>
                     <h3 style="text-decoration:underline; text-align:center; ">Günlere Göre Şikayetler</h3>
+                    
+                    <div class="form-group" style="display:flex; ">
+                        <label for="Student">Başlangıç Tarihi:</label>
+                        <input name="startingDateTime" id="startingDateTime">
+                    </div>
+
                     <img class="centered_image" src="fm_ekran_2_bar.png" alt="???">
                     <br>
                 </div>
+
+                <!-- turlerine gore sikayetler -->
                 <div class="col-md-5 offset-md-1" style="background-color:#F2F2F2; border:5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px;">
                     <br>
                     <h3 style="text-decoration:underline; text-align:center;">Türlerine Göre Şikayetler</h3>
@@ -100,8 +100,9 @@
 
 <script>
       $(document).ready(function() {
-        $("#boran").on("click", function(event) {
-            console.log("div tiklandi");
+        $('#startingDateTime').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd/mm/yyyy',
         });
     })
     </script>
