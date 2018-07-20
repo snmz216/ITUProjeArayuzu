@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>ADMIN_1</title>
+    <title>ADMIN_1(LOGIN)</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="admin_panel_style.css">
+    <script src="fm_navigation.js"></script>
+    
 
     <style>
         .btn {
@@ -24,8 +26,6 @@
 
         .login_inputs {
             padding: 0.75rem 1.25rem;
-
-
             position: relative;
             margin-bottom: 1rem;
         }
@@ -35,21 +35,22 @@
         }
     </style>
 
-
 </head>
 
 <body>
     <div class="row" style="margin:0;padding:0">
         <!-- sol paneldeki admin butonlari -->
         <div class="admin_buttons_container col-md-2">
-            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated" id="adminButton0">
                 ANASAYFA </div>
-            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated" id="adminButton1">
                 ŞİKAYETLER </div>
-            <div class="btn col-md-11 admin_buttons admin_button_deactivated">
+
+            <!-- adminButton 2 and 3 are reserved -->
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated" id="adminButton4">
                 İSTATİSTİKLER </div>
 
-            <div class="btn col-md-11 admin_buttons admin_button_deactivated" style="margin-top:180%">
+            <div class="btn col-md-11 admin_buttons admin_button_deactivated" id="adminButton5" style="margin-top:180%">
                 ÇIKIŞ YAP </div>
         </div>
 
@@ -75,15 +76,11 @@
                     <input class="form-control login_inputs" type="text">
                 </div>
             </div>
-
-
-
            
             <div onclick="" class="col-md-11 alert alert-success" style="text-align: center; cursor: pointer;" id="boran">
                 GİRİŞ YAP
             </div>
            
-
         </div>
     </div>
 </body>

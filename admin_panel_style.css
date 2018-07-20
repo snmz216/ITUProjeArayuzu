@@ -1,6 +1,6 @@
 
 .admin_buttons {
-    margin-left: 1%;
+    /* margin-left: 1%; */
     /* font-weight: bold; */
     /*color: white;*/
     /*background-color: #00B050;*/
@@ -9,6 +9,8 @@
     border-top-left-radius:10px; 
     border-bottom-right-radius:10px;
 
+    /* satir uzun olunca alta inmeyi sagliyo */
+    white-space: normal;
 }
 
 .admin_button_current

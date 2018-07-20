@@ -5,16 +5,23 @@
 <head>
 
     <title>ADMIN_19(ISTATISTIKLER)</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="admin_panel_style.css">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    
+    <script src="bootstrap.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="checkbox_style.css">
+
+    <script src="fm_navigation.js"></script>
+    
 
     <style>
         .btn {
@@ -43,6 +50,13 @@
             margin-right: auto;
             width: 90%;
         }
+
+        .btn span.glyphicon {    			
+            opacity: 0;				
+        }
+        .btn.active span.glyphicon {				
+            opacity: 1;				
+        }
     </style>
 
 
@@ -52,14 +66,21 @@
     <div class="row" style="margin:0;padding:0">
         <!-- sol paneldeki admin butonlari -->
         <div class="admin_buttons_container col-md-2">
-            <div class="btn col-md-11 admin_buttons admin_button_available">
+            <div class="btn col-md-11 admin_buttons admin_button_available" id="adminButton0">
                 ANASAYFA </div>
-            <div class="btn col-md-11 admin_buttons admin_button_available">
+            <div class="btn col-md-11 admin_buttons admin_button_available" id="adminButton1">
                 ŞİKAYETLER </div>
-            <div class="btn col-md-11 admin_buttons admin_button_current">
+            <div class="btn col-md-9 offset-md-2 admin_buttons admin_button_available" id="adminButton2">
+                BEKLEYENLERİ GÖSTER(4)
+            </div>
+
+            <div class="btn col-md-9 offset-md-2 admin_buttons admin_button_available" id="adminButton3">
+                FİLTRE EKLE
+            </div>
+            <div class="btn col-md-11 admin_buttons admin_button_current" id="adminButton4">
                 İSTATİSTİKLER </div>
 
-            <div class="btn col-md-11 admin_buttons admin_button_logout" style="margin-top:180%">
+            <div class="btn col-md-11 admin_buttons admin_button_logout" id="adminButton5" style="margin-top:180%">
                 ÇIKIŞ YAP </div>
         </div>
 
@@ -68,29 +89,139 @@
         <!-- sag taraftaki -->
         <div class="cizik col-md-9" style="margin-top:20px;">
 
-            
             <div class="row col-md-12" style="margin-top:20px">
+
                 <!-- gunlere gore sikayetler -->
-                <div class="col-md-5" style="background-color:#F2F2F2; border: 5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px;">
+                <div class="col-md-5" style="background-color:#F2F2F2; border: 5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px; margin-right:20px;">
                     <br>
                     <h3 style="text-decoration:underline; text-align:center; ">Günlere Göre Şikayetler</h3>
                     
-                    <div class="form-group" style="display:flex; ">
-                        <label for="Student">Başlangıç Tarihi:</label>
-                        <input name="startingDateTime" id="startingDateTime">
+                    <!-- baslangic tarihi -->
+                    <div class="row col-md-12" style="">
+                        <div class="col-md-4" style="padding-right:0; padding-top:10px;">
+                            <label for="startingDateTime">Başlangıç Tarihi:</label>
+                        </div>
+
+                        <div class="col-md-6" style="padding-left:0;">
+                            <input name="startingDateTime" id="startingDateTime">
+                        </div>
                     </div>
 
-                    <img class="centered_image" src="fm_ekran_2_bar.png" alt="???">
+                    <!-- bitis tarihi -->
+                    <div class="row col-md-12" style="margin-top:5px;">
+                        <div class="col-md-4" style="padding-right:0; padding-top:10px;">
+                            <label for="endingDateTime">Bitiş Tarihi:</label>
+                        </div>
+
+                        <div class="col-md-6" style="padding-left:0;">
+                            <input name="endingDateTime" id="endingDateTime">
+                        </div>
+                    </div>
+
                     <br>
+                    <p style="text-align:center;">Şikayet Durumu:</p>
+
+                    <div class="funkyradio">
+                        <div class="funkyradio-success">
+                            <input class="col-md-3 timeCheckbox" type="checkbox" name="checkbox" id="checkboxTime0"/>
+                            <label class="col-md-5" for="checkboxTime0">Onaylanmış</label>
+                        </div>   
+
+                        <div class="funkyradio-success">
+                            <input class="col-md-3 timeCheckbox" type="checkbox" name="checkbox" id="checkboxTime1"/>
+                            <label class="col-md-5" for="checkboxTime1">Bekleyen</label>
+                        </div>   
+                        
+                        <div class="funkyradio-success">
+                            <input class="col-md-3 timeCheckbox" type="checkbox" name="checkbox" id="checkboxTime2"/>
+                            <label class="col-md-5" for="checkboxTime2">Reddedilen</label>
+                        </div>   
+                        
+                        <div class="funkyradio-success">
+                            <input class="col-md-3 timeCheckbox" type="checkbox" name="checkbox" id="checkboxTime3"/>
+                            <label class="col-md-5" for="checkboxTime3">Sonlandırılmış</label>
+                        </div>   
+                    </div>
+
+                    <img class="centered_image" src="fm_ekran_19_bar.png" alt="???">
+                    
+                    <div class="btn" id="pdfButtonTime" style="background-color:#548235; border-top-left-radius:10px; border-bottom-right-radius:10px;">
+                        PDF ÇIKTISI AL
+                    </div>
+                    <br>
+                    
                 </div>
 
                 <!-- turlerine gore sikayetler -->
-                <div class="col-md-5 offset-md-1" style="background-color:#F2F2F2; border:5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px;">
-                    <br>
-                    <h3 style="text-decoration:underline; text-align:center;">Türlerine Göre Şikayetler</h3>
-                    <img class="centered_image" src="fm_ekran_2_pasta.png" alt="???">
-                    <br>
-                </div>
+                <div class="col-md-5" style="background-color:#F2F2F2; border: 5px solid #A2A2A2; border-top-left-radius:50px; border-bottom-right-radius:50px;">
+                        <br>
+                        <h3 style="text-decoration:underline; text-align:center; ">Türlerine Göre Şikayetler</h3>
+                        
+                        <!-- baslangic tarihi -->
+                        <div class="row col-md-12" style="">
+                            <div class="col-md-4" style="padding-right:0; padding-top:10px;">
+                                <label for="startingDateType">Başlangıç Tarihi:</label>
+                            </div>
+    
+                            <div class="col-md-6" style="padding-left:0;">
+                                <input name="startingDateType" id="startingDateType">
+                            </div>
+                        </div>
+    
+                        <!-- bitis tarihi -->
+                        <div class="row col-md-12" style="margin-top:5px;">
+                            <div class="col-md-4" style="padding-right:0; padding-top:10px;">
+                                <label for="endingDateType">Bitiş Tarihi:</label>
+                            </div>
+    
+                            <div class="col-md-6" style="padding-left:0;">
+                                <input name="endingDateType" id="endingDateType">
+                            </div>
+                        </div>
+    
+                        <br>
+                        <p style="text-align:center;">Şikayet Durumu:</p>
+    
+                        <div class="funkyradio">
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType0"/>
+                                <label class="col-md-5" for="checkboxType0">Termal Konfor</label>
+                            </div>   
+    
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType1"/>
+                                <label class="col-md-5" for="checkboxType1">Akustik Konfor</label>
+                            </div>   
+                            
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType2"/>
+                                <label class="col-md-5" for="checkboxType2">Bina Hizmetleri</label>
+                            </div>   
+                            
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType3"/>
+                                <label class="col-md-5" for="checkboxType3">Görsel Konfor</label>
+                            </div>   
+
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType4"/>
+                                <label class="col-md-5" for="checkboxType4">Bina Tasarımı</label>
+                            </div> 
+
+                            <div class="funkyradio-success">
+                                <input class="col-md-3 typeCheckbox" type="checkbox" name="checkbox" id="checkboxType5"/>
+                                <label class="col-md-5" for="checkboxType5">Bina Hizmetleri</label>
+                            </div> 
+                        </div>
+    
+                        <img class="centered_image" src="fm_ekran_19_pasta.png" alt="???">
+                        
+                        <div class="btn" id="pdfButtonType" style="background-color:#548235; border-top-left-radius:10px; border-bottom-right-radius:10px;">
+                            PDF ÇIKTISI AL
+                        </div>
+                        <br>
+                        
+                    </div>
                 
             </div>
 
@@ -99,11 +230,106 @@
 </body>
 
 <script>
-      $(document).ready(function() {
+    //  initialize date pickers
+    $(document).ready(function() {
         $('#startingDateTime').datepicker({
             uiLibrary: 'bootstrap4',
             format: 'dd/mm/yyyy',
         });
+        $('#endingDateTime').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd/mm/yyyy',
+        });
+        $("#startingDateType").datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd/mm/yyyy',
+        });
+        $("#endingDateType").datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd/mm/yyyy',
+        });
+    })
+
+    //  pdf button callbacks
+    $(document).ready(function() {
+        //  pdf button for time
+        $("#pdfButtonTime").on("click", function() {
+            console.log("time pdf");
+        });
+
+        //  pdf button for type
+        $("#pdfButtonType").on("click", function() {
+            console.log("type pdf");
+        });
+    })
+
+    //  checkbox callbacks
+    $(document).ready(function() {
+        //  time checkbox callbacks
+        $(".timeCheckbox").change(function() {
+            // 
+            if (this.checked)
+            {
+                console.log("time checked");
+            }
+            else
+            {
+                console.log("time unchecked");
+            }
+
+            /*
+            //  assuming id of time checkboxes are in form checkboxTime{i}
+            //  i from 0 to 3
+            var base = "checkboxTime";
+            var i = 0;
+            for (i=0; i <= 3; ++i)
+            {
+                var checkboxId = base + String(i);
+                if ($("#" + checkboxId).attr("checked") )
+            }
+            */
+
+            //  check state of each timeCheckbox
+            $(".timeCheckbox").each(function() 
+            {
+                labelString = $("label[for='"+$(this).attr("id")+"']").text();
+                if (this.checked)
+                {
+                    console.log("(+)" + labelString + " checked");
+                }
+                else
+                {
+                    console.log("(-)" + labelString + " unchecked");
+                }
+            });
+        });
+
+        //  type button callbacks
+        $(".typeCheckbox").change(function () {
+            //
+            if (this.checked)
+            {
+                console.log("type checked");
+            }
+            else
+            {
+                console.log("type unchecked");
+            }
+
+            //  check state of each typeCheckbox
+            $(".typeCheckbox").each(function() 
+            {
+                labelString = $("label[for='"+$(this).attr("id")+"']").text();
+                if (this.checked)
+                {
+                    console.log("(+)" + labelString + " checked");
+                }
+                else
+                {
+                    console.log("(-)" + labelString + " unchecked");
+                }
+            });
+        })
     })
     </script>
 
