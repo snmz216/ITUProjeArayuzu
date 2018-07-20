@@ -368,15 +368,17 @@
                 console.log("Boyut:" + boyutText);
                 console.log("Kriter:" + kriterText);
                 console.log("İndikatör:" + indikatorText); 
+
+                console.log("3 saniye icinde sorgu sonucu ekranina gidiyor");
+
+                setTimeout(
+                function()
+                {
+                    window.location.href = "admin_18.html";
+                }, 3000);
             });
 
-            console.log("3 saniye icinde sorgu sonucu ekranina gidiyor");
-
-            setTimeout(
-            function()
-            {
-                window.location.href = "admin_18.html";
-            }, 3000);
+            
         });
     </script>
 
