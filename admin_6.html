@@ -1,0 +1,385 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ADMIN_6(SORGU EKLE)</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="admin_panel_style.css">
+    <script src="fm_navigation.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="sikayet_listesi_turkce.js"></script>
+
+    <style>
+        .btn {
+            display: block !important;
+        }
+
+        .admin_buttons_container {
+            border-right: 3px solid #A6A6A6;
+        }
+
+       
+
+        .cizik {
+            border: 1px dashed black;
+        }
+
+        .centered_image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="row" style="margin:0;padding:0">
+        <!-- sol paneldeki admin butonlari -->
+        <div class="admin_buttons_container col-md-2">
+            <div class="btn col-md-11 admin_buttons admin_button_available" id="adminButton0">
+                ANASAYFA </div>
+            <div class="btn col-md-11 admin_buttons admin_button_available" id="adminButton1">
+                ŞİKAYETLER </div>
+
+            <div class="btn col-md-9 offset-md-2 admin_buttons admin_button_available" id="adminButton2">
+                BEKLEYENLERİ GÖSTER(4)
+            </div>
+
+            <div class="btn col-md-9 offset-md-2 admin_buttons admin_button_current" id="adminButton3">
+                FİLTRE EKLE
+            </div>
+
+            <div class="btn col-md-11 admin_buttons admin_button_available" id="adminButton4">
+                İSTATİSTİKLER </div>
+            
+            
+
+            <div class="btn col-md-11 admin_buttons admin_button_logout" id="adminButton5" style="margin-top:180%">
+                ÇIKIŞ YAP </div>
+        </div>
+
+        <!-- sag taraftaki -->
+        <div class="cizik col-md-9" style="margin-top:20px;">
+            <!-- sorgu ekle yazisi  -->
+            <div class="" style="width:100%; margin-right:40px !important; background-color:#F2F2F2; border:5px solid #A2A2A2;margin-top:10px; border-top-left-radius:50px; border-bottom-right-radius:50px;">
+                <br>
+                <h3 style="text-decoration:underline; text-align:center;">SORGU EKLE</h3>
+            </div>
+
+            <!-- akordeon start -->
+            <div id="accordion" style="margin-top:40px;">
+                <!-- Boyut -->
+                <div class="card">
+                    <div class="card-header" id="headingBoyut">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Boyut
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body" id="boyutButtonDiv">
+                            <!-- buraya boyut seceneklerinin butonlari olcak -->
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Kriter -->
+                <div class="card">
+                    <div class="card-header" id="headingKriter">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Kriter
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body" id="kriterButtonDiv">
+                            <!-- buraya kriter butonlari gelecek -->
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Indikator -->
+                <div class="card">
+                    <div class="card-header" id="headingIndikator">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                İndikatör
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body" id="indikatorButtonDiv">
+                            <!-- buraya indikator butonlari -->
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Aktor -->
+                <div class="card">
+                    <div class="card-header" id="headingAktor">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Aktör
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        aktor nasil secilcek
+                    </div>
+                </div>
+        
+                <!-- Kullanici / geri bildirim konumu -->
+                <div class="card">
+                    <div class="card-header" id="headingUserLocation">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Kullanıcı/Geri Bildirim Konumu
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        Kullanici/geri bildirim konumu nasil secilecek
+                    </div>
+                </div>
+        
+                <!-- Bina Eleman Türü -->
+                <div class="card">
+                    <div class="card-header" id="headingBuildingComponent">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                Bina Eleman Türü
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        bina eleman türü nasil secilcek
+                    </div>
+                </div>
+        
+                <!-- Geri Bildirim Yapılan Eleman -->
+                <div class="card">
+                    <div class="card-header" id="headingFeedbackComponent">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                Geri Bildirim Yapılan Eleman
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                        geri bildirim yapilan eleman nasil secilecek
+                    </div>
+                </div>
+        
+                <!-- Kaynak Konumu -->
+                <div class="card">
+                    <div class="card-header" id="headingSourceLocation">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Kaynak Konumu
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                        kaynak konumu nasil secilecek
+                    </div>
+                </div>
+        
+                <!-- Zaman Bilgisi -->
+                <div class="card">
+                    <div class="card-header" id="headingTime">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                Zaman Bilgisi
+                            </button>
+                        </h5>
+                    </div>
+        
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                        zaman bilgisi nasil secilecek, bi fikrim var aslinda
+                    </div>
+                </div>
+            </div> <!-- akordeon end -->
+
+            <!-- sorguyu gerceklestirme butonu -->
+            <div class="btn boyutButton" id="queryButton" align="center" style="width:20%; margin-top:5px; background-color:#FFC82C; border-top-left-radius:10px; border-bottom-right-radius:10px; color:#77704F;">
+                Sorgula
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+        boyutText = "";
+        kriterText = "";
+        indikatorText = "";
+    
+        //  Boyut collapse icini doldur
+        $(document).ready(function() {
+            var prefix = '<div class="btn boyutButton" align="center" style="width:40%; margin-top:5px; background-color:#47525E; border-top-left-radius:10px; border-bottom-right-radius:10px; color:white;">';
+            var suffix = '</div><br>';
+    
+            for (key in sikayet_listesi)
+            {
+                if (key !== "undefined")
+                {
+                    var element = prefix + key + suffix;
+                    $("#boyutButtonDiv").append(element);
+                }
+                console.log(key);
+            }
+
+            $("#kriterButtonDiv").append("Boyut seciniz!");
+            $("#indikatorButtonDiv").append("Kriter seciniz!");
+        });
+    
+        //  boyut button click event
+        $("#boyutButtonDiv").on("click", function(event) {
+            var target = $(event.target);
+            if (target.hasClass("boyutButton"))
+            {
+                //  turn all boyut button texts to white
+                $(".boyutButton").css("color", "white");
+    
+                //  highlight selected button text with green
+                target.css("color", "#63A056");
+    
+                //  clear kriter buttons
+                $("#kriterButtonDiv").empty();
+    
+                //  clear indikator buttons
+                $("#indikatorButtonDiv").empty();
+                $("#indikatorButtonDiv").append("Kriter seciniz!");
+    
+                //  create kriter buttons
+                var prefix = '<div class="btn kriterButton" align="center" style="margin-top:5px; background-color:#47525E; border-top-left-radius:10px; border-bottom-right-radius:10px; color:white;">';
+                var suffix = '</div><br>';
+    
+                for (key in sikayet_listesi[target.text()])
+                {
+                    var element = prefix + key + suffix;
+                    $("#kriterButtonDiv").append(element);
+                    // console.log(key);
+                }
+    
+                boyutText = target.text();
+                kriterText = "";
+                indikatorText = "";
+            }
+        })
+    
+        //  kriter button click event
+        $("#kriterButtonDiv").on("click", function(event) {
+            var target = $(event.target);
+            if (target.hasClass("kriterButton"))
+            {
+                //  turn all kriter button texts to white
+                $(".kriterButton").css("color", "white");
+    
+                //  highlight selected button text with green
+                target.css("color", "#63A056");
+    
+                //  clear indikator buttons
+                $("#indikatorButtonDiv").empty();
+    
+                //  create indikator buttons
+                var prefix = '<div class="btn indikatorButton" align="center" style="margin-top:5px; background-color:#47525E; border-top-left-radius:10px; border-bottom-right-radius:10px; color:white;">';
+                var suffix = '</div><br>';
+    
+                L0 = sikayet_listesi[boyutText];
+                L1 = L0[target.text()];
+                // console.log(L0);
+                // console.log(L1);
+    
+                for (index = 0; index < L1.length; ++index)
+                {
+                    key = L1[index];
+                    var element = prefix + key + suffix;
+                    $("#indikatorButtonDiv").append(element);
+                    // console.log(key);
+                }
+    
+                kriterText = target.text();
+                indikatorText = "";
+            }
+        });
+    
+        //  indikator button click event
+        $("#indikatorButtonDiv").on("click", function(event) {
+            var target = $(event.target);
+            if (target.hasClass("indikatorButton"))
+            {
+                //  turn all indikator button texts to white
+                $(".indikatorButton").css("color", "white");
+    
+                //  highlight selected button text with green
+                target.css("color", "#63A056");
+    
+                indikatorText = target.text();
+            }
+        });
+    
+    
+        //  collapse one callbacks
+        $(document).ready(function() {
+            //  boyut show callback
+            $("#collapseOne").on("show.bs.collapse", function() {
+                // console.log("immediate show callback");
+            });
+    
+            $("#collapseOne").on("shown.bs.collapse", function() {
+                // console.log("completed show callback");
+            });
+    
+            //  boyut collapse callback
+            $("#collapseOne").on("hide.bs.collapse", function() {
+                // console.log("immediate hide callback")
+            });
+            
+            $("#collapseOne").on("hidden.bs.collapse", function () {
+                // console.log("boyut hide oldu");
+            });
+        });
+
+        //  query button callback
+        $(document).ready(function() {
+            $("#queryButton").on("click", function() {
+                console.log("--- Clicked query button ---");
+                console.log("Boyut:" + boyutText);
+                console.log("Kriter:" + kriterText);
+                console.log("İndikatör:" + indikatorText); 
+
+                console.log("3 saniye icinde sorgu sonucu ekranina gidiyor");
+
+                setTimeout(
+                function()
+                {
+                    window.location.href = "admin_18.html";
+                }, 3000);
+            });
+
+            
+        });
+    </script>
+
+</html>

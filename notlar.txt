@@ -1,0 +1,2 @@
+kullanici ekrani 3_1_1_2 jsde prefix, suffix, ve hide islemlerini loop disinda yap.
+fm_ekran_18 excel ciktisi al butonunu ortala
